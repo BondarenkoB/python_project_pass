@@ -1,5 +1,6 @@
-
-#Password length request from the user
+#module
+import random
+import string
 while True:
     try:
         password_length = int(input("Enter the password length: "))
@@ -54,3 +55,14 @@ while True:
             raise ValueError("Incorret input")
     except ValueError as error:
         print(f"Error: {error}")
+       
+
+# Combining the character types requested by the user
+characters = letters + numbers + special_chars
+
+# Generating the password
+password = "".join(random.choice(characters) for i in range(password_length))
+
+# Outputting the password
+print("Your password is:", password)
+#Password length request from the user
